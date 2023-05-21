@@ -1,0 +1,62 @@
+.glowing {
+    width: 1800px;
+    height: 300px;
+    background-color: black;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation-name: divcolor;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    border-radius: 50px;
+    animation-timing-function: ease-in;
+    animation-direction: alternate-reverse;
+}
+
+.study {
+    width: 200px;
+    color: blue;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+    animation-name: study;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    left: 300px;
+    animation-direction: alternate-reverse;
+}
+
+.glowing::after {
+content: "";
+position: absolute;
+height: 90%;
+width: 99%;
+background: linear-gradient( red, blue, green);
+z-index: -1;
+filter: blur(20px);
+top: 11px;
+left: 13px;
+transition: all 500ms ease;
+}
+
+.glowing:hover::after {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+@keyframes divcolor{
+    0% {background-color: black;}
+    50% {background-color: grey;}
+    100% {background-color: white;}
+}
+
+@keyframes study {
+    0% {transform: translateX(1500px);}
+}
